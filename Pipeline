@@ -1,0 +1,41 @@
+pipeline{
+    agent any
+    stages{
+            stage("Data Extraction"){
+                steps{
+                    sh 'python3 load_data.py'
+                }
+            }
+            stage("Data Analysis"){
+                steps{
+                    sh 'python3 data_analysis.py'
+                }
+            }
+            stage("Data Preprocessing"){
+                steps{
+                    sh 'python3 data_preprocessing.py'
+                }
+            }
+            stage("Data Viaualization"){
+                steps{
+                    sh 'python3 datavisualization.py'
+                }
+            }
+            stage("Feature Engineering"){
+                steps{
+                    sh 'python3 feature_engineering.py'
+                }
+            }
+            stage("Feature Selection"){
+                steps{
+                    sh 'python3 feature_selection.py'
+                }
+            }
+    }
+    post{
+       
+        always {
+            archiveArtifacts artifacts: 'Dimond_Price_Prediction_Cleaned_Dataset.csv', onlyIfSuccessful: true
+        }
+            }
+}
