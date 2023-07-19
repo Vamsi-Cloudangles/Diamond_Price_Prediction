@@ -80,10 +80,10 @@ def data_visualization():
     plt.show()
 
     #correlation matrix
-    cmap = sns.diverging_palette(70,20,s=50, l=40, n=6,as_cmap=True)
-    corrmat = dataset.corr()
-    f, ax = plt.subplots(figsize=(12,12))
-    sns.heatmap(corrmat,cmap=cmap,annot=True, )
-    plt.show()
+    # cmap = sns.diverging_palette(70,20,s=50, l=40, n=6,as_cmap=True)
+    # corrmat = dataset.corr()
+    # f, ax = plt.subplots(figsize=(12,12))
+    # sns.heatmap(corrmat,cmap=cmap,annot=True, )
+    # plt.show()
 
 data_visualization()
