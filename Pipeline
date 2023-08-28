@@ -16,7 +16,7 @@ pipeline{
                     sh 'python3 data_preprocessing.py'
                 }
             }
-            stage("Data Viaualization"){
+            stage("Data Visualization"){
                 steps{
                     sh 'python3 datavisualization.py'
                 }
